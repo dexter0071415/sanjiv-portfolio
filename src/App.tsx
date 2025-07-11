@@ -79,7 +79,7 @@ function CertificationsSection() {
       <h2>Certifications</h2>
       <ul className="portfolio-list">
         <li>
-          <strong>SOLIDWORKS PROFICIENT</strong> – <a href="https://8d11ce8b-529e-44e9-90e2-f17c788baee3.filesusr.com/ugd/2a1742_e049b26e65f848848e983be46bfd994f.pdf" target="_blank" rel="noopener noreferrer">Certificate</a>
+        <strong>SOLIDWORKS PROFICIENT</strong> – <a href="https://8d11ce8b-529e-44e9-90e2-f17c788baee3.filesusr.com/ugd/2a1742_e049b26e65f848848e983be46bfd994f.pdf" target="_blank" rel="noopener noreferrer">Certificate</a>
         </li>
         <li>
           <strong>ANSYS</strong> – <a href="https://8d11ce8b-529e-44e9-90e2-f17c788baee3.filesusr.com/ugd/2a1742_948d01571ac34d1c813157419bec6664.pdf" target="_blank" rel="noopener noreferrer">Certificate</a>
@@ -290,7 +290,7 @@ function Footer() {
   return (
     <footer className="portfolio-footer">
       <div>
-        <span>© {new Date().getFullYear()} Sanjiv S. | Portfolio Website</span>
+        <span>© {new Date().getFullYear()} Sanjiv S.S | Portfolio Website</span>
         <span style={{marginLeft: '1.5rem'}}>
           <a href="mailto:sivasumasnjiv@gmail.com" className="portfolio-link"></a>
         </span>
