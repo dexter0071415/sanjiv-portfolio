@@ -1,0 +1,668 @@
+html, body, #root {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: rgb(29,40,41);
+  background: -moz-linear-gradient(90deg, rgba(29,40,41,1) 0%, rgba(24,30,31,1) 11%, rgba(19,19,20,1) 41%, rgba(19,19,20,1) 58%, rgba(24,30,31,1) 85%, rgba(29,40,41,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(29,40,41,1) 0%, rgba(24,30,31,1) 11%, rgba(19,19,20,1) 41%, rgba(19,19,20,1) 58%, rgba(24,30,31,1) 85%, rgba(29,40,41,1) 100%);
+  background: linear-gradient(90deg, rgba(29,40,41,1) 0%, rgba(24,30,31,1) 11%, rgba(19,19,20,1) 41%, rgba(19,19,20,1) 58%, rgba(24,30,31,1) 85%, rgba(29,40,41,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1d2829",endColorstr="#1d2829",GradientType=1);
+  color: white;
+  box-sizing: border-box;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+
+.portfolio-root {
+  min-height: 100vh;
+  background: none;
+  color: #F8F8FF;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  padding: 0 0 4rem 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Add background images with overlay */
+  overflow: hidden;
+}
+
+.portfolio-root::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: none;
+  filter: none;
+}
+
+/* Ensure content is above background images */
+.portfolio-root > * {
+  position: relative;
+  z-index: 1;
+}
+
+.main-content {
+  margin-left: 340px;
+  max-width: calc(1200px - 320px);
+  width: auto;
+  padding-left: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.sidebar {
+  flex: 0 0 320px;
+  background: none;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px 0 #181a1a99, 0 0px 0px 2px #232323;
+  padding: 0.4rem 1rem;
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 6.5rem;
+  z-index: 10;
+  border: none !important;
+  max-width: 320px;
+  width: 320px;
+  height: auto;
+  max-height: calc(100vh - 2.5rem);
+  overflow-y: auto;
+  backdrop-filter: blur(10px) saturate(1.3);
+  font-size: 0.85rem;
+}
+
+/* Remove all hover and transition effects for .sidebar */
+.sidebar {
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+.sidebar:hover, .sidebar:focus {
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.sidebar,
+.portfolio-section {
+  border: none !important;
+}
+
+.sidebar h1, .sidebar h2, .sidebar h3 {
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    position: static;
+    top: unset;
+    left: unset;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 2rem;
+    margin-top: 0;
+    max-height: unset;
+    overflow-y: unset;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    margin-left: 0;
+    max-width: 100%;
+    width: 100%;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0.5rem 0 0.5rem;
+  }
+}
+
+.portfolio-header {
+  max-width: 700px;
+  margin-top: 20px;
+  margin-left: 300px;
+  
+  padding: 0 2.5rem !important;
+  text-align: left;
+
+}
+
+.portfolio-header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: whitesmoke;
+  margin-top: 0px !important;
+  margin-bottom: 0;
+  margin-left: 0;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+  text-align: center;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.subtitle {
+  color: #a0a0a0;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-section {
+  background: none;
+  border-radius: 1.2rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 8px 32px 0 #181a1a99, 0 0px 0px 2px #232323;
+  border: none !important;
+  backdrop-filter: blur(8px);
+  transition: transform 0.25s cubic-bezier(0.23,1,0.32,1), box-shadow 0.25s cubic-bezier(0.23,1,0.32,1), background 0.25s;
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+/* Remove all hover and transition effects for .portfolio-section */
+.portfolio-section {
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+.portfolio-section:hover, .portfolio-section:focus {
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.portfolio-section h2 {
+  color: #00ffd0;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+}
+
+.portfolio-link {
+  color: #FF79C6;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.portfolio-link:hover {
+  color: #FFD600;
+}
+
+/* Animated underline for links */
+.portfolio-link, .portfolio-list a {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.portfolio-link::before, .portfolio-list a::before {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #8be9fd 0%, #ff79c6 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.23,1,0.32,1);
+}
+.portfolio-link:hover::before, .portfolio-list a:hover::before {
+  transform: scaleX(1);
+}
+
+.portfolio-list {
+  list-style: none;
+  padding: 0;
+}
+.portfolio-list li {
+  margin-bottom: 0.7rem;
+}
+.portfolio-list a {
+  color: #50fa7b;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.portfolio-list a:hover {
+  color: #f1fa8c;
+}
+
+.portfolio-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.portfolio-images img {
+  max-width: 180px;
+  border-radius: 0.8rem;
+  box-shadow: 0 2px 16px 0 #0006;
+  border: 2px solid #232946;
+  background: #232946;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.portfolio-images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 32px 0 #000a;
+}
+
+.personal-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  background: rgba(36, 36, 60, 0.7);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 16px 0 #0006;
+}
+.profile-pic-wrapper {
+  display: inline-block;
+  padding: 0;
+  background: none;
+  border-radius: 0px;
+  box-shadow: none;
+  margin-right: 0.5rem;
+  height: 210px;
+  width: 170px;
+  overflow: hidden;
+  position: relative;
+  border: none !important;
+}
+.profile-pic {
+  width: 170px;
+  height: 210px;
+  border-radius: 0px;
+  object-fit: cover;
+  object-position: top center;
+  background: #232946;
+  aspect-ratio: unset;
+  overflow: hidden;
+  border: none !important;
+  display: block;
+}
+
+/* Reduce border radius for the profile picture in the sidebar */
+.sidebar .profile-pic {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.55), 0 1.5px 6px 0 rgba(0,0,0,0.18);
+}
+
+.personal-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: #f1fa8c;
+  font-size: 1.5rem;
+}
+.personal-info p {
+  margin: 0.2rem 0;
+  color: #bcbcbc;
+  font-size: 1rem;
+}
+.personal-info a {
+  color: #50fa7b;
+  text-decoration: underline;
+}
+.personal-info a:hover {
+  color: #ff79c6;
+}
+
+.social-links {
+  margin-top: 0.5rem;
+}
+.social-links a {
+  color: #00FFD0;
+  margin: 0 0.5rem;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.social-links a:hover {
+  color: #FFD600;
+}
+
+.expertise-list {
+  list-style: disc inside;
+  padding-left: 1.5rem;
+  color: #e0e0e0;
+}
+.expertise-list li {
+  margin-bottom: 1rem;
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.experience-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background: rgba(36, 36, 60, 0.6);
+  border-radius: 0.8rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 1px 4px 0 #0002;
+  transition: box-shadow 0.25s cubic-bezier(0.23,1,0.32,1), transform 0.25s cubic-bezier(0.23,1,0.32,1);
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.experience-item:hover {
+  box-shadow: 0 4px 16px 0 #50fa7b55, 0 1px 6px 0 #8be9fd44;
+  transform: scale(1.05) rotate(1deg);
+}
+.exp-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  background: #fff;
+  border: 2px solid #232946;
+}
+.experience-item strong {
+  color: #f1fa8c;
+  font-size: 1.1rem;
+}
+.experience-item p {
+  margin: 0.2rem 0 0.2rem 0;
+  color: #bcbcbc;
+}
+.experience-item a {
+  color: #50fa7b;
+  text-decoration: underline;
+  font-size: 0.98rem;
+}
+.experience-item a:hover {
+  color: #ff79c6;
+}
+
+.project-card {
+  background: linear-gradient(120deg, #232323 80%, #1d2829 100%);
+  border: 1.5px solid #23232344;
+  box-shadow: 0 4px 24px 0 #181a1a99;
+  padding: 1rem;
+  margin: 0.5rem;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s cubic-bezier(0.23,1,0.32,1), box-shadow 0.25s cubic-bezier(0.23,1,0.32,1), background 0.25s;
+  cursor: pointer;
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.project-card:hover {
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 16px 48px 0 #232323cc, 0 2px 16px 0 #23232388;
+  background: linear-gradient(120deg, #232323 40%, #1d2829 100%);
+}
+
+.project-card img {
+  max-width: 180px;
+  border-radius: 0.8rem;
+  margin-bottom: 0.7rem;
+  border: 2px solid #232946;
+  background: #232946;
+  transition: filter 0.3s cubic-bezier(0.23,1,0.32,1), transform 0.3s cubic-bezier(0.23,1,0.32,1);
+}
+.project-card:hover img {
+  filter: brightness(1.2) drop-shadow(0 0 18px #8be9fdcc);
+  transform: scale(1.12) rotate(2deg);
+}
+
+.portfolio-footer {
+  width: 100%;
+  background: transparent;
+  color: #B0B3C6;
+  text-align: center;
+  padding: 2rem 0 1.2rem 0;
+  font-size: 1.08rem;
+  border-top: 1.5px solid rgba(176,179,198,0.13);
+  margin-top: 2rem;
+  box-shadow: none;
+  position: relative;
+  z-index: 2;
+}
+.portfolio-footer a {
+  color: #00FFD0;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.portfolio-footer a:hover {
+  color: #FFD600;
+}
+
+/* Accent color update for links/buttons */
+.portfolio-link, .social-links a {
+  color: #00FFD0;
+}
+.portfolio-link:hover, .social-links a:hover {
+  color: #FFD600;
+}
+
+/* Section width consistency */
+.sections-area {
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+}
+.portfolio-section {
+  max-width: 700px;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.sidebar a[href^="mailto:"] {
+  color: #50fa7b;
+  text-decoration: underline;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+.sidebar a[href^="mailto:"]:hover {
+  color: #FFD600;
+  text-shadow: 0 0 8px #00FFD0;
+}
+
+/* Internship image card (first internship) */
+.internship-image-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 220px;
+  min-height: 160px;
+  aspect-ratio: 1.4/1;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  box-shadow: 0 2px 16px 0 #0006;
+  background: #232946;
+  cursor: pointer;
+  transition: box-shadow 0.25s cubic-bezier(0.23,1,0.32,1), transform 0.25s cubic-bezier(0.23,1,0.32,1);
+  max-width: 320px;
+  max-height: 220px;
+}
+.internship-image-card:hover {
+  box-shadow: 0 8px 32px 0 #00FFD099, 0 2px 16px 0 #23232388;
+  transform: scale(1.08) rotate(-2deg);
+}
+.internship-img-hover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  display: block;
+  transition: filter 0.3s, transform 0.3s;
+}
+.internship-image-card:hover .internship-img-hover {
+  filter: brightness(1.2) drop-shadow(0 0 18px #8be9fdcc);
+  transform: scale(1.12) rotate(2deg);
+}
+.internship-hover-label {
+  position: absolute;
+  left: 0; right: 0; bottom: 0; top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #00FFD0;
+  background: rgba(24,30,31,0.92);
+  font-weight: 700;
+  font-size: 1.15rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.23,1,0.32,1);
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 0.8rem;
+  height: 100%;
+}
+.internship-image-card:hover .internship-hover-label {
+  opacity: 1;
+}
+.internship-hover-disclaimer {
+  color: #FFD600;
+  font-size: 0.98rem;
+  font-weight: 500;
+  margin-top: 0.4rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px #000a;
+}
+
+.experience-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Remove custom major project styles and use the same as other project cards */
+/* Remove .major-project-card and .major-project-card .exp-logo and .major-project-featured-badge styles */
+
+/* The following styles are already present and used for all project cards, including the major one: */
+.internship-image-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 220px;
+  min-height: 160px;
+  aspect-ratio: 1.4/1;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  box-shadow: 0 2px 16px 0 #0006;
+  background: #232946;
+  cursor: pointer;
+  transition: box-shadow 0.25s cubic-bezier(0.23,1,0.32,1), transform 0.25s cubic-bezier(0.23,1,0.32,1);
+  max-width: 320px;
+  max-height: 220px;
+}
+.internship-image-card:hover {
+  box-shadow: 0 8px 32px 0 #00FFD099, 0 2px 16px 0 #23232388;
+  transform: scale(1.08) rotate(-2deg);
+}
+.internship-img-hover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  display: block;
+  transition: filter 0.3s, transform 0.3s;
+}
+.internship-image-card:hover .internship-img-hover {
+  filter: brightness(1.2) drop-shadow(0 0 18px #8be9fdcc);
+  transform: scale(1.12) rotate(2deg);
+}
+.internship-hover-label {
+  position: absolute;
+  left: 0; right: 0; bottom: 0; top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #00FFD0;
+  background: rgba(24,30,31,0.92);
+  font-weight: 700;
+  font-size: 1.15rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.23,1,0.32,1);
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 0.8rem;
+  height: 100%;
+}
+.internship-image-card:hover .internship-hover-label {
+  opacity: 1;
+}
+.internship-hover-disclaimer {
+  color: #FFD600;
+  font-size: 0.98rem;
+  font-weight: 500;
+  margin-top: 0.4rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px #000a;
+}
+
+.major-project-card {
+  grid-column: span 2;
+  min-height: 440px;
+  flex: 1 1 100%;
+  max-width: 660px;
+  width: 100%;
+}
+.major-project-card .exp-logo {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  border: 2px solid #232946;
+  background: #232946;
+  display: block;
+  margin: 0;
+}

@@ -1,0 +1,46 @@
+/* Portfolio Abstract Page Styles - Consistent with App.css */
+body {
+  background: #181a20;
+  color: #f8f8f2;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background: #232634;
+  color: #50fa7b;
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.abstract-container {
+  max-width: 700px;
+  margin: 2.5rem auto;
+  background: #232634;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px #000a 0.2;
+  padding: 2.5rem 2rem;
+}
+
+h2, h3 {
+  color: #50fa7b;
+  margin-top: 2rem;
+}
+
+a {
+  color: #50fa7b;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .abstract-container {
+    padding: 1.2rem 0.5rem;
+  }
+  .header {
+    font-size: 1.2rem;
+  }
+}

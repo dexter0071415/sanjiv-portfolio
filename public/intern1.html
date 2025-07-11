@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Abstract - Portfolio</title>
+  <style>
+    /* 🌌 Gradient Background and Global Styling */
+    html, body {
+      height: 100%;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      overflow-x: hidden;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(90deg, rgba(29,40,41,1) 0%, rgba(24,30,31,1) 11%, rgba(19,19,20,1) 41%, rgba(19,19,20,1) 58%, rgba(24,30,31,1) 85%, rgba(29,40,41,1) 100%);
+      color: #ffffff;
+    }
+
+    /* 📦 Abstract Section Container */
+    #project-abstract {
+      padding: 2rem;
+      margin: auto;
+      max-width: 900px;
+      background-color: transparent;
+    }
+
+    /* ✨ Headings */
+    #project-abstract h2 {
+      color: #00ffc6;
+      margin-top: 2rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #project-abstract h3 {
+      color: #00ffaa;
+      margin-top: 1.5rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    /* 📝 Text Styling */
+    #project-abstract p,
+    #project-abstract ul,
+    #project-abstract li {
+      color: #d6d6d6;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    #project-abstract ul {
+      padding-left: 1.2rem;
+      list-style-type: disc;
+    }
+
+    /* 🧮 Table Styling */
+    #project-abstract table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      background-color: rgba(255, 255, 255, 0.03);
+      color: #eaeaea;
+      font-size: 0.95rem;
+    }
+
+    #project-abstract table th,
+    #project-abstract table td {
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 0.6rem;
+      text-align: left;
+    }
+
+    #project-abstract table caption {
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #00ffc6;
+      text-align: left;
+    }
+
+    /* 📸 Image Styling */
+    .inserted-img {
+      width: 100%;
+      height: auto;
+      margin: 1.5rem 0;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* 📱 Responsive Tweaks */
+    @media (max-width: 600px) {
+      #project-abstract {
+        padding: 1rem;
+      }
+      #project-abstract table th,
+      #project-abstract table td {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="project-abstract">
+    <h2>🔧 Project Title</h2>
+    <p><strong>Hardware Spillage and Sequence Missing Prevention</strong></p>
+
+    <h2>🚀 Overview</h2>
+    <p>
+      This project tackles two critical disruptions in modern manufacturing—<strong>hardware spillage</strong> and <strong>sequence missing</strong>—through innovative mechanical and IoT-based solutions aligned with Industry 4.0 goals.
+    </p>
+
+    <h2>🛠️ Core Challenges</h2>
+    <ul>
+      <li><strong>Hardware Spillage</strong>: Loss of nuts, bolts, washers during handling and assembly.</li>
+      <li><strong>Sequence Missing</strong>: Incorrect part selection or installation disrupting synchronized workflows.</li>
+    </ul>
+
+    <h2>🧠 Root Cause Analysis</h2>
+    <p>Identified using Fishbone Diagram across:</p>
+    <ul>
+      <li>Human error</li>
+      <li>Machine malfunction</li>
+      <li>Material inefficiencies</li>
+      <li>Poor workplace ergonomics</li>
+      <li>Process inconsistencies</li>
+    </ul>
+
+    <img src="/images/Screenshot_20250703_164222_M365%20Copilot.jpg" alt="Fishbone Diagram Root Cause" class="inserted-img" />
+
+    <h2>🔩 Solution 1: Nut Cartridge-Feeder Device</h2>
+    <p><strong>Mechanism:</strong> Rack-and-pinion + magnetic nut alignment</p>
+    <ul>
+      <li>Automated nut handling</li>
+      <li>Prevents spillage</li>
+      <li>Improves ergonomics and cycle time</li>
+    </ul>
+
+    <img src="/images/Screenshot_20250703_164244_M365%20Copilot.jpg" alt="Nut Cartridge Feeder Device" class="inserted-img" />
+
+    <table>
+      <caption>Nut Cartridge vs Pneumatic Feeder</caption>
+      <tr>
+        <th>Feature</th>
+        <th>Cartridge Device</th>
+        <th>Pneumatic Feeder</th>
+      </tr>
+      <tr>
+        <td>Accuracy</td>
+        <td>✅ Magnetic precision</td>
+        <td>⚠️ Air-flow dependent</td>
+      </tr>
+      <tr>
+        <td>Maintenance</td>
+        <td>✅ Low</td>
+        <td>⚠️ High</td>
+      </tr>
+      <tr>
+        <td>Energy Use</td>
+        <td>✅ Passive</td>
+        <td>⚠️ High (Compressed Air)</td>
+      </tr>
+    </table>
+
+    <h2>🔄 Solution 2: Sequence Control</h2>
+    <h3>🌱 Spring-Based System</h3>
+    <ul>
+      <li>Weight-based deflection guides selection</li>
+      <li>Radium screen reveals correct part</li>
+      <li>Ideal for semi-automated stations</li>
+    </ul>
+
+    <h3>🌐 IoT Smart Compartment</h3>
+    <ul>
+      <li>Load cells + RGB LEDs</li>
+      <li>Live alerts: green (ready), blue (next), red (error)</li>
+      <li>Arduino-powered with supervisor notifications</li>
+    </ul>
+
+    <img src="/images/Screenshot_20250703_164252_M365%20Copilot.jpg" alt="IoT Smart Compartment" class="inserted-img" />
+
+    <h2>📈 Results & Performance</h2>
+    <ul>
+      <li>✅ 100% sequence error reduction</li>
+      <li>✅ Improved workflow and pick accuracy</li>
+      <li>✅ Real-time tracking and ERP compatibility</li>
+    </ul>
+
+    <h2>🔮 Future Enhancements</h2>
+    <table>
+      <caption>Proposed Upgrades</caption>
+      <tr>
+        <th>Component</th>
+        <th>Upgrade</th>
+      </tr>
+      <tr>
+        <td>Feeder</td>
+        <td>Universal nut cartridge, jam sensors</td>
+      </tr>
+      <tr>
+        <td>Spring System</td>
+        <td>IR sensor-based deflection monitoring</td>
+      </tr>
+      <tr>
+        <td>IoT Compartment</td>
+        <td>AI fatigue alerts, mobile dashboards</td>
+      </tr>
+    </table>
+
+    <h2>🎓 Learning & Value</h2>
+    <ul>
+      <li>Practical mechatronics and IoT implementation</li>
+      <li>Ergonomic design and process optimization</li>
+      <li>Industry 4.0-ready solution framework</li>
+    </ul>
+  </div>
+</body>
+</html>
