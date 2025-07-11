@@ -1,3 +1,58 @@
+/* Responsive styles for mobile view */
+@media (max-width: 768px) {
+  .portfolio-root {
+    flex-direction: column;
+    padding: 0 0.5rem;
+  }
+  .main-content {
+    flex-direction: column;
+    display: flex;
+    align-items: stretch;
+  }
+  .sidebar {
+    position: static;
+    width: 100%;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .profile-pic-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .profile-pic {
+    width: 120px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  .sections-area {
+    width: 100%;
+    padding: 0;
+  }
+  .portfolio-section {
+    padding: 1rem 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .experience-list-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+  }
+  .internship-image-card, .major-project-card {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .portfolio-header {
+    font-size: 2rem !important;
+    padding: 1rem 0.5rem;
+    text-align: center;
+  }
+  .portfolio-footer {
+    font-size: 0.95rem;
+    padding: 1rem 0.5rem;
+    text-align: center;
+  }
+}
 html, body, #root {
   height: 100%;
   min-height: 100vh;
