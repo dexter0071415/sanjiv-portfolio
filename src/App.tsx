@@ -290,7 +290,7 @@ function Footer() {
   return (
     <footer className="portfolio-footer">
       <div>
-        <span>© {new Date().getFullYear()} Sanjiv S. | Portfolio Website</span>
+        <span>© {new Date().getFullYear()} Sanjiv S.S | Portfolio Website</span>
         <span style={{marginLeft: '1.5rem'}}>
           <a href="mailto:sivasumasnjiv@gmail.com" className="portfolio-link"></a>
         </span>
