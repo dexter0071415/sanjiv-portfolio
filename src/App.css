@@ -69,6 +69,8 @@
     padding: 1rem 0.5rem !important;
     text-align: center !important;
     margin-left: 0 !important;
+    max-width: 100% !important;
+  }
   /* Fix project card layout for mobile */
   .project-card {
     max-width: 100% !important;
@@ -100,8 +102,6 @@
     font-size: 1rem !important;
     line-height: 1.2 !important;
     margin-bottom: 0.5rem !important;
-  }
-    max-width: 100% !important;
   }
   .portfolio-footer {
     font-size: 0.95rem !important;
