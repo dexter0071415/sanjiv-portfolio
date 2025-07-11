@@ -1,3 +1,4 @@
+
 # Sanjiv's Interactive Portfolio
 
 This is a modern, interactive portfolio website built with Vite, React, and TypeScript. It uses a dark, rich theme and showcases:
