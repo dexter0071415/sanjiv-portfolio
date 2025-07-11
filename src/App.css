@@ -1,56 +1,81 @@
 /* Responsive styles for mobile view */
 @media (max-width: 768px) {
   .portfolio-root {
-    flex-direction: column;
-    padding: 0 0.5rem;
+    flex-direction: column !important;
+    padding: 0 0.5rem !important;
+    align-items: stretch !important;
   }
   .main-content {
-    flex-direction: column;
-    display: flex;
-    align-items: stretch;
+    margin-left: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    flex-direction: column !important;
+    gap: 1.2rem !important;
+    padding: 0 !important;
+    align-items: stretch !important;
   }
   .sidebar {
-    position: static;
-    width: 100%;
-    margin-bottom: 2rem;
-    text-align: center;
+    position: static !important;
+    left: unset !important;
+    top: unset !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-bottom: 2rem !important;
+    margin-top: 0 !important;
+    text-align: center !important;
+    box-shadow: none !important;
+    border-radius: 0.8rem !important;
+    padding: 1rem 0.5rem !important;
+    font-size: 1rem !important;
   }
   .profile-pic-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    height: auto !important;
   }
   .profile-pic {
-    width: 120px;
-    height: auto;
-    margin-bottom: 1rem;
+    width: 120px !important;
+    height: auto !important;
+    margin-bottom: 1rem !important;
+    border-radius: 12px !important;
   }
   .sections-area {
-    width: 100%;
-    padding: 0;
+    width: 100% !important;
+    padding: 0 !important;
+    max-width: 100% !important;
   }
   .portfolio-section {
-    padding: 1rem 0.5rem;
-    margin-bottom: 1.5rem;
+    padding: 1rem 0.5rem !important;
+    margin-bottom: 1.5rem !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
   }
   .experience-list-grid {
     grid-template-columns: 1fr !important;
     gap: 1.2rem !important;
+    margin-top: 1rem !important;
   }
   .internship-image-card, .major-project-card {
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0.5rem 0 !important;
   }
   .portfolio-header {
     font-size: 2rem !important;
-    padding: 1rem 0.5rem;
-    text-align: center;
+    padding: 1rem 0.5rem !important;
+    text-align: center !important;
+    margin-left: 0 !important;
+    max-width: 100% !important;
   }
   .portfolio-footer {
-    font-size: 0.95rem;
-    padding: 1rem 0.5rem;
-    text-align: center;
+    font-size: 0.95rem !important;
+    padding: 1rem 0.5rem !important;
+    text-align: center !important;
+    margin-top: 1.5rem !important;
   }
 }
 html, body, #root {
